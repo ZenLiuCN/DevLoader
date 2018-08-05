@@ -1,0 +1,28 @@
+debug: false
+env:
+    -   name: HOME
+        type: 2
+        x86:
+            - /HOME
+    -   name: ENV
+        type: 2
+        x86:
+            - /HOME/.ashrc
+    -   name: PATH
+        type: 0
+        x86:
+            - /tools
+            - /home
+
+runafter:
+    x86:
+        -   path: cmd
+            param:
+                - '/c'
+                - 'start'
+                - './tools/busybox.exe'
+                - 'bash'
+                - '-l'
+            fixparam: true
+            show: true
+            wait: true
